@@ -78,7 +78,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100 text-center"
               >
-                <img src={img(member.image, { w: 300, h: 300 })} alt={member.name} className="w-full h-44 object-cover" loading="lazy" />
+                <img src={img(member.image, { w: 600, h: 600 })} alt={member.name} className="w-full h-44 object-cover" loading="lazy" />
                 <div className="p-4">
                   <h4 className="font-bold text-stone-900 text-sm">{member.name}</h4>
                   <p className="text-stone-400 text-xs">{member.role}</p>

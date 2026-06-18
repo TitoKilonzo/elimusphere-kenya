@@ -110,7 +110,7 @@ export default function Library({ extraResources = [] }: LibraryProps) {
               className="bg-white rounded-2xl border border-stone-100 shadow-sm overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
             >
               <div className="relative h-32 overflow-hidden">
-                <img src={img(res.imageQuery as any, { w: 500, h: 260 })} alt="" className="w-full h-full object-cover" loading="lazy" />
+                <img src={img(res.imageQuery as any, { w: 800, h: 420 })} alt="" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <span className="absolute top-2.5 left-2.5 px-2.5 py-1 bg-white/90 text-[var(--elimu-amber-700)] rounded-full text-[10px] font-extrabold uppercase">
                   {res.type}

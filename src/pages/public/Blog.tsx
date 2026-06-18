@@ -55,7 +55,7 @@ export default function Blog() {
             className="bg-white rounded-2xl border border-stone-100 shadow-sm overflow-hidden flex flex-col sm:flex-row hover:shadow-lg transition-shadow cursor-pointer group"
           >
             <div className="sm:w-2/5 h-44 sm:h-auto overflow-hidden">
-              <img src={img(post.image, { w: 400, h: 320 })} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={img(post.image, { w: 700, h: 560 })} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <div className="p-5 flex flex-col flex-1">
               <span className="text-[10px] font-extrabold text-[var(--elimu-amber-600)] uppercase tracking-wide mb-2">{post.tag}</span>

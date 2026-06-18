@@ -195,7 +195,7 @@ export default function Landing() {
               >
                 <div className="relative h-32 overflow-hidden">
                   <img
-                    src={img(card.image as any, { w: 500, h: 260 })}
+                    src={img(card.image as any, { w: 800, h: 420 })}
                     alt=""
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
