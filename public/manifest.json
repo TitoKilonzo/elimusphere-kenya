@@ -1,0 +1,33 @@
+{
+  "name": "ElimuSphere Kenya",
+  "short_name": "ElimuSphere",
+  "description": "One app for every step of your child's CBC/CBE journey - AI tutoring, KICD-aligned lessons, CBAF-scored assessments, and real-time parent reports.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFFCF8",
+  "theme_color": "#1C1714",
+  "lang": "en-KE",
+  "categories": ["education", "kids"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

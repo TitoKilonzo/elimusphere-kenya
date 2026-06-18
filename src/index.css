@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Core brand: Golden Orange & White */
+  --elimu-amber-50:  #FFF8EC;
+  --elimu-amber-100: #FEEBC8;
+  --elimu-amber-200: #FDD49B;
+  --elimu-amber-400: #F7A53B;
+  --elimu-amber-500: #F2901E; /* primary brand orange */
+  --elimu-amber-600: #DD7912;
+  --elimu-amber-700: #B8600D;
+  --elimu-amber-900: #5C3306;
+
+  /* Ink / neutrals (warm near-black, not pure slate) */
+  --elimu-ink-950: #1C1714;
+  --elimu-ink-900: #241E19;
+  --elimu-ink-800: #34291F;
+  --elimu-ink-600: #6B5B4D;
+  --elimu-ink-400: #A9978A;
+  --elimu-ink-100: #F4ECE3;
+
+  /* Supporting accent: savanna green (CBAF "exceeding" + success states) */
+  --elimu-green-50:  #EEF7F0;
+  --elimu-green-500: #1F8A55;
+  --elimu-green-600: #15703F;
+
+  /* Supporting accent: sky (info, teacher-hub) */
+  --elimu-sky-500: #2F87C8;
+
+  --font-display: 'Sora', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Sora', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #FFFCF8;
+  color: var(--elimu-ink-950);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ----------------------------------------------------------------
+   Signature motif: the "Strand Path" - a connected-node thread that
+   mirrors the CBC content hierarchy (Grade -> Subject -> Strand ->
+   Sub-strand). Used in hero, progress views, and section dividers.
+-------------------------------------------------------------------*/
+.strand-path {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.strand-node {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--elimu-amber-500);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(242, 144, 30, 0.12);
+}
+
+.strand-node.is-muted {
+  background: var(--elimu-ink-400);
+  box-shadow: 0 0 0 4px rgba(169, 151, 138, 0.12);
+}
+
+.strand-link {
+  height: 1px;
+  flex: 1 1 1.5rem;
+  min-width: 0.75rem;
+  background: linear-gradient(90deg, var(--elimu-amber-500), rgba(242, 144, 30, 0.15));
+}
+
+.strand-link.is-muted {
+  background: rgba(169, 151, 138, 0.25);
+}
+
+/* ----------------------------------------------------------------
+   Animations
+-------------------------------------------------------------------*/
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slide-down 0.22s ease-out;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(110deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 60%);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s infinite;
+}
+
+@keyframes grow-bar {
+  from { width: 0%; }
+}
+.animate-grow-bar {
+  animation: grow-bar 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.92) translateY(6px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-shimmer,
+  .animate-grow-bar,
+  .animate-pop-in,
+  .animate-slide-down {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Thin scrollbar utility (used in chat panes / consoles) */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+.scrollbar-thin-dark::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
